@@ -48,6 +48,14 @@ class Usuario {
         return $lista;
     }
 
+    public function listAll($condicoes = array()) {
+        $db = DB::createPDO();
+        $rs = $db->query("select * from usuarios ");
+        $rs->execute();
+        $lista = $rs->fetchAll();
+        return $lista;
+    }
+
     /**
      * Método criado para encontrar um
      * usuário usando seu ID. Usa o 
@@ -59,7 +67,4 @@ class Usuario {
         return $item[0];
     }
 
-    /* aqui você criaria outros métodos
-      como inserir, salvar e apagar,
-      que não entram em nosso exemplo */
 }

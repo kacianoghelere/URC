@@ -17,7 +17,7 @@ class HomeControl extends Control {
      */
     public function listar() {
         # carrega o modelo Usuario que está na pasta modelos
-        $this->model('Usuario');
+        $this->getModel('Usuario');
 
         # defino uma variável para receber a lista de usuários
         $lista = array();
@@ -28,8 +28,8 @@ class HomeControl extends Control {
         # a partir de agora, toda alteração na variável lista é refletida
         # na variável lista dentro da visão
         # Uso o modelo para listar os usuário cadastrados no banco
-        $lista = $this->Usuario->listar();
-        
+        $lista = $this->Usuario->listAll();
+
         # indico a visão para renderizar 
         # a lista de usuários no navegador
         $this->view->render('Usuario/lista');

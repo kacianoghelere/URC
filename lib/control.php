@@ -27,7 +27,7 @@ class Control {
      * um modelo dinamicamente dentro
      * de um controle.
      */
-    public function model($name) {
+    public function getModel($name) {
         # procura o arquivo modelo dentro
         # da pasta modelos.
         if (file_exists("model/{$name}.php")) {            

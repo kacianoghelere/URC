@@ -23,7 +23,7 @@ class Config {
             'banco' => 'dbmvc',
             'charset' => 'utf8'
         ),
-        'outro_banco' => array(
+        'pgsql' => array(
             'servidor' => 'localhost',
             'usuario' => 'root',
             'driver' => 'postgre',
