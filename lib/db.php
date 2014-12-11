@@ -51,7 +51,7 @@ class DB {
         }
     }
 
-    public static function createPDO($type = '') {
+    public static function createPDO($type = 'padrao') {
         new PDO("mysql:host=" . Config::$database[$type]['servidor'] . ";dbname=" . Config::$database[$type]['banco'], Config::$database[$type]['usuario'], Config::$database[$type]['senha']);
     }
 
