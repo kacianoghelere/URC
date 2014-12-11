@@ -39,10 +39,7 @@ class DB {
         # cria uma nova conexão com o banco de dados.
         if (Config::$database[$type]['driver'] == 'mysqli') {
             self::$database[$type] = new mysqli(
-                    Config::$database[$type]['servidor'], 
-                    Config::$database[$type]['usuario'], 
-                    Config::$database[$type]['senha'],
-                    Config::$database[$type]['banco']
+                    Config::$database[$type]['servidor'], Config::$database[$type]['usuario'], Config::$database[$type]['senha'], Config::$database[$type]['banco']
             );
 
             if (Config::$database[$type]['charset'] != '') {
@@ -52,6 +49,10 @@ class DB {
 
             return self::$database[$type];
         }
+    }
+
+    public static function createPDO($type = '') {
+        new PDO("mysql:host=" . Config::$database[$type]['servidor'] . ";dbname=" . Config::$database[$type]['banco'], Config::$database[$type]['usuario'], Config::$database[$type]['senha']);
     }
 
 }
