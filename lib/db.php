@@ -1,6 +1,7 @@
 <?php
 
 use mysqli;
+use PDO;
 
 /**
  * classe que serve de caminho padrão
