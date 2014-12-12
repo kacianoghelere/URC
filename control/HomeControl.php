@@ -32,7 +32,7 @@ class HomeControl extends Control {
 
         # indico a visão para renderizar 
         # a lista de usuários no navegador
-        $this->view->render('Usuario/lista');
+        $this->view->render('lista');
     }
 
     /**
