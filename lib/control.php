@@ -22,6 +22,26 @@ class Control {
         $this->view = new View();
     }
 
+    public function execute() {
+        $action = Request::get('action');
+
+        # agora,verificamos de a ação foi informada
+        if ($action == "") {
+            # se não informamos a ação
+            # usamos o método padrão index
+            $action = 'index';
+        }
+
+        # verifica se o método existe no objeto controle
+        if (method_exists($this, $action)) {
+            # se existir, executa o método
+            $this->$action();
+        } else {
+            # se não existir, emite uma mensagem de erro
+            die('<br>Action not found!!!');
+        }
+    }
+    
     /**
      * Método para incluir e carregar
      * um modelo dinamicamente dentro

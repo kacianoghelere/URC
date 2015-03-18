@@ -1,5 +1,6 @@
 <?php
-
+define('ASSETS_CSS', 'view/assets/css/');
+define('ASSETS_JS', 'view/assets/js/');
 /**
  * A classe visão é responsável por armazenar data
  * para apresentação num determinado arquivo de
