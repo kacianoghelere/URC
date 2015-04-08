@@ -12,6 +12,10 @@ class HomeControl extends Control {
         die('Método form executado.');
     }
 
+    public function add() {
+
+    }
+    
     /**
      * Método listar que será executado pela URL.
      */

@@ -1,3 +1,7 @@
+<?php
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +22,17 @@
         <!-- Custom styles for this template -->
         <link href="./assets/custom/css/signin.css" rel="stylesheet">
         <link href="./assets/custom/css/sticky-footer-navbar.css" rel="stylesheet">
-        <link href="./assets/custom/css/system.css" rel="stylesheet">        
+        <link href="./assets/custom/css/system.css" rel="stylesheet">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="./assets/custom/js/ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
 
     <body>
@@ -26,31 +40,27 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">                    
-                    <a class="navbar-brand">Ultimate RPG Tools</a>
+                    <a class="navbar-brand">Ultimate RPG Tool</a>
                 </div>
             </div>
         </nav>
 
         <!-- Begin page content -->
         <div class="container">
-            <form id="form-login" class="form-signin" >
+            <form class="form-signin" action="control/login_control.php" method="post" target="_self">
                 <h2 class="form-signin-heading">Iniciar sessão</h2>
-
                 <label for="login" class="sr-only">Usuário</label>
-                <input id="login" type="text" class="form-control" placeholder="Usuário" required autofocus>
-
+                <input type="text" id="login" class="form-control" placeholder="Usuário" required autofocus>
                 <label for="pass" class="sr-only">Senha</label>
-                <input id="pass" type="password" class="form-control" placeholder="******" required>
-
+                <input type="password" id="pass" class="form-control" placeholder="******" required>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me">Lembrar
                     </label>
                 </div>
-
-                <input type="hidden" id="control" value="Login" >
-                <button id="action" class="btn btn-success btn-block" value="login" type="submit">Entrar</button>
+                <input class="btn btn-success btn-block" value="Entrar" id="action" type="submit">
             </form>
+
         </div> <!-- /container -->
 
         <footer class="footer">
@@ -60,16 +70,6 @@
         </footer>
 
         <script src="./assets/jquery/js/jquery.min.js"></script>
-        <script src="./assets/custom/js/send/login.js"></script>
-        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-                <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-        <script src="./assets/custom/js/ie-emulation-modes-warning.js"></script>
-
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->        
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->        
         <script src="./assets/custom/js/ie10-viewport-bug-workaround.js"></script>        
     </body>

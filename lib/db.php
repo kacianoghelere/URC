@@ -1,5 +1,8 @@
 <?php
 
+use mysqli;
+use PDO;
+
 /**
  * classe que serve de caminho padrão
  * para instanciar uma conexão com
@@ -39,7 +42,7 @@ class DB {
             self::$database[$type] = new mysqli(
                     Config::$database[$type]['servidor'], Config::$database[$type]['usuario'], Config::$database[$type]['senha'], Config::$database[$type]['banco']
             );
-            self::$database[$type] = new PDO("mysql:host=" . Config::$database[$type]['servidor'] . ";dbname=" . Config::$database[$type]['banco'], Config::$database[$type]['usuario'], Config::$database[$type]['senha']);
+
             if (Config::$database[$type]['charset'] != '') {
                 self::$database[$type]->set_charset(
                         Config::$database[$type]['charset']);

@@ -19,6 +19,7 @@ class Request {
      *  @return string
      */
     public static function get($key) {
+
         if (isset($_REQUEST[$key]) && ($_REQUEST[$key] != '')) {
             return $_REQUEST[$key];
         } else {
