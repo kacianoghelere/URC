@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 require_once './lib/request.php';
 require_once './lib/control.php';
 require_once './lib/view.php';
@@ -15,7 +16,7 @@ $action = Request::get('action');
 if ($control == '') {
     # agora definimos um controle padrão
     # quando nenhum controle for informado
-    $control = "Home";
+    $control = "Index";
 }
 
 # verifica se o arquivo de controle existe na pasta controle
@@ -39,7 +40,7 @@ $control_inst = new $control();
 if ($action == "") {
     # se não informamos a ação
     # usamos o método padrão index
-    $action = 'listar';
+    $action = 'index';
 }
 
 # verifica se o método existe no objeto controle
