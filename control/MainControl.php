@@ -12,14 +12,4 @@ class MainControl extends Control {
         $this->view->set('title', 'Meu primeiro MVC em PHP');
         $this->view->render('Main');
     }
-
-    public function listMenus() {
-        $list = array();
-        return $list;
-    }
-
-    public function mostrar() {
-        return "Teste";
-    }
-
 }

@@ -26,7 +26,7 @@ class Control {
         $action = Request::get('action');
 
         # agora,verificamos de a ação foi informada
-        if ($action == "") {
+        if ($action == '') {
             # se não informamos a ação
             # usamos o método padrão index
             $action = 'index';
